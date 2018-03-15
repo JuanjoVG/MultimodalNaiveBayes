@@ -1,8 +1,12 @@
 import pandas as pd
 
-data = pd.read_csv('BlogSentences.txt', sep="	", header=None)
-data.columns = ["Target", "Sentence"]
+from MultimodalNaiveBayes import MultimodalNaiveBayes
 
-## Clean sentences
-for sentence in data.Sentence:
-    print(sentence.split())
+train_data = pd.read_csv('BlogSentences.txt', sep="	")
+train_data.columns = ["Target", "Text"]
+
+model = MultimodalNaiveBayes()
+
+model.train(train_data)
+error_rate = model.test(train_data)
+print(error_rate)
