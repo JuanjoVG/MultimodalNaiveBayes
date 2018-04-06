@@ -55,7 +55,7 @@ class MultimodalNaiveBayes:
         return self.model[term][target]
 
     def get_probability(self, target, term):
-        return (self.get_occurrences(term, target) + 1)/(self.target_terms[target] + self.num_terms)
+        return (self.get_occurrences(term, target) + 1) / (self.target_terms[target] + self.num_terms)
 
     def test(self, test_data):
         errors = 0
@@ -66,6 +66,15 @@ class MultimodalNaiveBayes:
             if pred_target != row['Target']:
                 errors += 1
             total += 1
-        return errors/total
+        return (errors / total)*100
 
-
+    def show(self):
+        print("Term probs:")
+        terms_occ = {}
+        for term in self.model.keys():
+            term_occurrences = sum([self.get_occurrences(term, target) for target in self.targets])
+            terms_occ[term] = term_occurrences
+        for term, term_occurrences in sorted(terms_occ.items(), key=lambda x: x[1], reverse=True):
+            print("Term", "\"" + term + "\"", "appears", term_occurrences, "times", ":")
+            for target in self.targets:
+                print(target, ":", round(self.get_occurrences(term, target) / term_occurrences, 3))

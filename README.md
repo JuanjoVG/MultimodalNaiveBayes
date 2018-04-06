@@ -1,1 +1,2 @@
-# MultimodalNaiveBayes
+# Multimodal Naive Bayes
+
