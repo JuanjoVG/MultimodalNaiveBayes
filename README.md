@@ -216,4 +216,16 @@ model.show()
 
 ## data.zip
 
-This compressed file contains the four datasets that the *main.py* is prepared to read. The *main.py* file assumes that they are unzipped in a *data* folder. The datasets are not added to the repository in order to avoid saturations on the repository.
+This compressed file contains the four datasets that the *main.py* is prepared to read. The *main.py* file assumes that they are unzipped in a *data* folder. The datasets are not added to the repository in order to avoid saturations on the repository. The final project structure should be:
+
+- MultimodaNaiveBayes
+    - data
+        - AmazonComments.txt
+        - BlogSentences.txt
+        - IMDBComments.txt
+        - YelpComments.txt
+    - data.zip
+    - main.py
+    - MultimodalNaiveBayes.py
+    - README.md
+        
