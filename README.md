@@ -1,5 +1,7 @@
 # Multimodal Naive Bayes
 
+Link to GitHub repository: https://github.com/JuanjoVG/MultimodalNaiveBayes
+
 This project contains an implementation of the Multimodal Naive Bayes algorithm (**MultimodalNaiveBayes.py**), used to classification problems for text datasets. The project also contains a python script (**main.py**) which is an example of the use of the algorithm and four datasets to test it (**data.zip**).
 
 ## MultimodalNaiveBayes.py
